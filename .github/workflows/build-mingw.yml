@@ -12,13 +12,12 @@ jobs:
     runs-on: windows-latest
     env:
       libraryName: instant-meshes
-      tagName: v8.0.2
       cmakeInstallationPath: instant-meshes-installation
       mingwTargetZip: instant-meshes-${{ github.ref_name }}-mingw64-x86_64-8.1.0-release-posix-seh-rt_v6-rev0.zip
     steps:
       - name: git clone
         shell: cmd
-        run: git clone --recursive https://github.com/wjakob/instant-meshes.git && cd instant-meshes && git checkout ${{ env.tagName }}
+        run: git clone --recursive https://github.com/wjakob/instant-meshes.git
         
       - name: curl x86_64-8.1.0-release-posix-seh-rt_v6-rev0.7z
         shell: cmd
